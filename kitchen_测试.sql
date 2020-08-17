@@ -11,7 +11,7 @@
  Target Server Version : 50731
  File Encoding         : 65001
 
- Date: 17/08/2020 15:08:26
+ Date: 17/08/2020 15:19:59
 */
 
 SET NAMES utf8mb4;
@@ -69,9 +69,9 @@ INSERT INTO `dms_dictionary` VALUES (11, 'default_icon', 'http://qn.zuizhezhi.co
 INSERT INTO `dms_dictionary` VALUES (12, 'service_open', '1', '服务开启状态(0->关闭;1->开启)', 1);
 INSERT INTO `dms_dictionary` VALUES (13, 'channel_conditions', '[5,10,20]', '成为渠道商条件[一星,二星,三星]', 1);
 INSERT INTO `dms_dictionary` VALUES (14, 'give_gift_unit', '50', '赠送礼包需支付的单元金额', 1);
-INSERT INTO `dms_dictionary` VALUES (15, 'distribution_auto_end', '10', '订单完成后分账提成完结时间(分钟)', 1);
-INSERT INTO `dms_dictionary` VALUES (16, 'distribution_member_auto_end', '5', '订单完成后会员提成失效时间(分钟)', 1);
-INSERT INTO `dms_dictionary` VALUES (19, 'distribution_member_distribution_ttl', '1', '订单完成后分账提成延迟(分钟)', 1);
+INSERT INTO `dms_dictionary` VALUES (15, 'distribution_auto_end', '15', '订单完成后分账提成完结时间(分钟)', 1);
+INSERT INTO `dms_dictionary` VALUES (16, 'distribution_member_auto_end', '10', '订单完成后会员提成失效时间(分钟)', 1);
+INSERT INTO `dms_dictionary` VALUES (19, 'distribution_member_distribution_ttl', '5', '订单完成后分账提成延迟(分钟)', 1);
 
 -- ----------------------------
 -- Table structure for oms_cart_item
@@ -99,7 +99,7 @@ CREATE TABLE `oms_cart_item`  (
   `product_attr` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '商品销售属性:[{\"key\":\"颜色\",\"value\":\"颜色\"},{\"key\":\"容量\",\"value\":\"4G\"}]',
   `product_category_id` bigint(20) DEFAULT NULL COMMENT '商品分类',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 930 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '购物车表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 932 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '购物车表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oms_cart_item
@@ -334,7 +334,7 @@ CREATE TABLE `oms_order`  (
   `modify_time` datetime(0) DEFAULT NULL COMMENT '修改时间',
   `create_time` datetime(0) NOT NULL COMMENT '提交时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 934 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 935 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oms_order
@@ -1184,6 +1184,7 @@ INSERT INTO `oms_order` VALUES (930, 331, NULL, 22, NULL, '20200817000006', 0.11
 INSERT INTO `oms_order` VALUES (931, 331, NULL, 22, NULL, '20200817000007', 0.1100, 0.1000, 0.1100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 4, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000007', '91295188202147155968', NULL, NULL, NULL, '2020-08-17 11:08:15', '2020-08-17 10:38:15');
 INSERT INTO `oms_order` VALUES (932, 331, NULL, 42, NULL, '20200817000008', 4.7100, -1.0800, 4.7100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 4, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000008', NULL, NULL, NULL, NULL, '2020-08-17 14:45:08', '2020-08-17 14:15:08');
 INSERT INTO `oms_order` VALUES (933, 331, NULL, 42, NULL, '20200817000009', 14.0000, 2.8000, 14.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000009', NULL, NULL, NULL, NULL, '2020-08-17 15:03:53', '2020-08-17 15:03:53');
+INSERT INTO `oms_order` VALUES (934, 331, NULL, 22, NULL, '20200817000010', 0.2100, 0.1900, 0.2100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000010', NULL, NULL, NULL, NULL, '2020-08-17 15:18:38', '2020-08-17 15:18:38');
 
 -- ----------------------------
 -- Table structure for oms_order_distribution
@@ -1607,7 +1608,7 @@ CREATE TABLE `oms_order_item`  (
   `sp3` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '商品的销售属性3',
   `product_attr` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '商品销售属性:[{\"key\":\"颜色\",\"value\":\"颜色\"},{\"key\":\"容量\",\"value\":\"4G\"}]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1096 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单中所包含的商品' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1098 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单中所包含的商品' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oms_order_item
@@ -2599,6 +2600,8 @@ INSERT INTO `oms_order_item` VALUES (1092, 931, '20200817000007', 0, 129, 0, 'ht
 INSERT INTO `oms_order_item` VALUES (1093, 932, '20200817000008', 0, 129, 0, 'http://bbcfqn.zuizhezhi.com/1597385704542.jpg', '金针菇', 'JLJZG01', 0.01, 0.11, 0.11, 1, 1833, '202008140129001', 75, NULL, '250g±25g', NULL, NULL, NULL);
 INSERT INTO `oms_order_item` VALUES (1094, 932, '20200817000008', 0, 72, 0, 'http://bbcfqn.zuizhezhi.com/1597511018184.jpg', '云南紫甘蓝', 'ZGL01', 5.78, 4.60, 4.60, 1, 1819, '202008160072001', 69, NULL, '900g-1300g', NULL, NULL, NULL);
 INSERT INTO `oms_order_item` VALUES (1095, 933, '20200817000009', 0, 125, 0, 'http://bbcfqn.zuizhezhi.com/1597515682200.jpeg', '本地翻砂西红柿', 'QGFSXHS01', 11.20, 14.00, 14.00, 1, 1831, '202008160125001', 67, NULL, '5斤/份', NULL, NULL, NULL);
+INSERT INTO `oms_order_item` VALUES (1096, 934, '20200817000010', 0, 129, 0, 'http://bbcfqn.zuizhezhi.com/1597385704542.jpg', '金针菇', 'JLJZG01', 0.01, 0.11, 0.11, 1, 1833, '202008140129001', 75, NULL, '250g±25g', NULL, NULL, NULL);
+INSERT INTO `oms_order_item` VALUES (1097, 934, '20200817000010', 0, 58, 0, 'http://bbcfqn.zuizhezhi.com/1596010798474.jpg', '小葱 ', 'XC001', 0.01, 0.10, 0.10, 1, 1832, '202007210058001', 74, NULL, '250g±25g', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for oms_order_operate_history
@@ -3239,7 +3242,7 @@ CREATE TABLE `oms_order_setting`  (
 -- ----------------------------
 -- Records of oms_order_setting
 -- ----------------------------
-INSERT INTO `oms_order_setting` VALUES (1, 30, 1, 1);
+INSERT INTO `oms_order_setting` VALUES (1, 5, 5, 5);
 
 -- ----------------------------
 -- Table structure for pms_product
@@ -3984,8 +3987,8 @@ INSERT INTO `pms_sku_stock` VALUES (1827, 173, '202008160173001', 1.9900, 1.6000
 INSERT INTO `pms_sku_stock` VALUES (1828, 63, '202008160063001', 6.7000, 5.5000, 500, NULL, '5斤/份', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597515199666.jpeg', NULL, 0, NULL);
 INSERT INTO `pms_sku_stock` VALUES (1830, 66, '202007210066001', 4.8000, 3.3000, 500, NULL, '550g±55g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1596012482895.jpg', 2, 0, NULL);
 INSERT INTO `pms_sku_stock` VALUES (1831, 125, '202008160125001', 14.0000, 11.2000, 499, NULL, '5斤/份', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597515682200.jpeg', 1, 1, NULL);
-INSERT INTO `pms_sku_stock` VALUES (1832, 58, '202007210058001', 0.1000, 0.0100, 500, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1596010798474.jpg', NULL, 0, NULL);
-INSERT INTO `pms_sku_stock` VALUES (1833, 129, '202008140129001', 0.1100, 0.0100, 495, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597385704542.jpg', 9, 0, NULL);
+INSERT INTO `pms_sku_stock` VALUES (1832, 58, '202007210058001', 0.1000, 0.0100, 500, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1596010798474.jpg', NULL, 1, NULL);
+INSERT INTO `pms_sku_stock` VALUES (1833, 129, '202008140129001', 0.1100, 0.0100, 495, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597385704542.jpg', 9, 1, NULL);
 
 -- ----------------------------
 -- Table structure for sms_coupon
