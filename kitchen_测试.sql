@@ -11,7 +11,7 @@
  Target Server Version : 50731
  File Encoding         : 65001
 
- Date: 17/08/2020 15:19:59
+ Date: 17/08/2020 15:33:36
 */
 
 SET NAMES utf8mb4;
@@ -1183,8 +1183,8 @@ INSERT INTO `oms_order` VALUES (929, 155, NULL, 32, NULL, '20200817000005', 0.11
 INSERT INTO `oms_order` VALUES (930, 331, NULL, 22, NULL, '20200817000006', 0.1100, 0.1000, 0.1100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 4, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000006', '91295176215145091072', NULL, NULL, NULL, '2020-08-17 10:20:39', '2020-08-17 09:50:39');
 INSERT INTO `oms_order` VALUES (931, 331, NULL, 22, NULL, '20200817000007', 0.1100, 0.1000, 0.1100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 4, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000007', '91295188202147155968', NULL, NULL, NULL, '2020-08-17 11:08:15', '2020-08-17 10:38:15');
 INSERT INTO `oms_order` VALUES (932, 331, NULL, 42, NULL, '20200817000008', 4.7100, -1.0800, 4.7100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 4, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000008', NULL, NULL, NULL, NULL, '2020-08-17 14:45:08', '2020-08-17 14:15:08');
-INSERT INTO `oms_order` VALUES (933, 331, NULL, 42, NULL, '20200817000009', 14.0000, 2.8000, 14.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000009', NULL, NULL, NULL, NULL, '2020-08-17 15:03:53', '2020-08-17 15:03:53');
-INSERT INTO `oms_order` VALUES (934, 331, NULL, 22, NULL, '20200817000010', 0.2100, 0.1900, 0.2100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000010', NULL, NULL, NULL, NULL, '2020-08-17 15:18:38', '2020-08-17 15:18:38');
+INSERT INTO `oms_order` VALUES (933, 331, NULL, 42, NULL, '20200817000009', 14.0000, 2.8000, 14.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 4, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000009', NULL, NULL, NULL, NULL, '2020-08-17 15:33:53', '2020-08-17 15:03:53');
+INSERT INTO `oms_order` VALUES (934, 331, NULL, 22, NULL, '20200817000010', 0.2100, 0.1900, 0.2100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 4, 0, 0, NULL, 0, '肖翔宇', '15026736162', NULL, NULL, 'O20200817000010', NULL, NULL, NULL, NULL, '2020-08-17 15:24:49', '2020-08-17 15:18:38');
 
 -- ----------------------------
 -- Table structure for oms_order_distribution
@@ -2615,7 +2615,7 @@ CREATE TABLE `oms_order_operate_history`  (
   `order_status` int(11) DEFAULT NULL COMMENT '订单状态：0->待付款;1->待领取;2->待核销;3->已完成;4->已关闭;',
   `note` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2220777 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单操作历史记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2220779 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单操作历史记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oms_order_operate_history
@@ -3226,6 +3226,8 @@ INSERT INTO `oms_order_operate_history` VALUES (2220773, 930, '系统', '2020-08
 INSERT INTO `oms_order_operate_history` VALUES (2220774, 928, '会员', '2020-08-17 10:40:53', 6, '订单商品退款');
 INSERT INTO `oms_order_operate_history` VALUES (2220775, 931, '系统', '2020-08-17 11:08:15', 4, '取消订单');
 INSERT INTO `oms_order_operate_history` VALUES (2220776, 932, '系统', '2020-08-17 14:45:08', 4, '取消订单');
+INSERT INTO `oms_order_operate_history` VALUES (2220777, 934, '系统', '2020-08-17 15:24:49', 4, '取消订单');
+INSERT INTO `oms_order_operate_history` VALUES (2220778, 933, '系统', '2020-08-17 15:33:53', 4, '取消订单');
 
 -- ----------------------------
 -- Table structure for oms_order_setting
@@ -3986,9 +3988,9 @@ INSERT INTO `pms_sku_stock` VALUES (1825, 127, '202008120127001', 1.9900, 1.6000
 INSERT INTO `pms_sku_stock` VALUES (1827, 173, '202008160173001', 1.9900, 1.6000, 500, NULL, '250g±50g', NULL, NULL, NULL, NULL, 0, NULL);
 INSERT INTO `pms_sku_stock` VALUES (1828, 63, '202008160063001', 6.7000, 5.5000, 500, NULL, '5斤/份', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597515199666.jpeg', NULL, 0, NULL);
 INSERT INTO `pms_sku_stock` VALUES (1830, 66, '202007210066001', 4.8000, 3.3000, 500, NULL, '550g±55g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1596012482895.jpg', 2, 0, NULL);
-INSERT INTO `pms_sku_stock` VALUES (1831, 125, '202008160125001', 14.0000, 11.2000, 499, NULL, '5斤/份', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597515682200.jpeg', 1, 1, NULL);
-INSERT INTO `pms_sku_stock` VALUES (1832, 58, '202007210058001', 0.1000, 0.0100, 500, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1596010798474.jpg', NULL, 1, NULL);
-INSERT INTO `pms_sku_stock` VALUES (1833, 129, '202008140129001', 0.1100, 0.0100, 495, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597385704542.jpg', 9, 1, NULL);
+INSERT INTO `pms_sku_stock` VALUES (1831, 125, '202008160125001', 14.0000, 11.2000, 499, NULL, '5斤/份', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597515682200.jpeg', 1, 0, NULL);
+INSERT INTO `pms_sku_stock` VALUES (1832, 58, '202007210058001', 0.1000, 0.0100, 500, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1596010798474.jpg', NULL, 0, NULL);
+INSERT INTO `pms_sku_stock` VALUES (1833, 129, '202008140129001', 0.1100, 0.0100, 495, NULL, '250g±25g', NULL, NULL, 'http://bbcfqn.zuizhezhi.com/1597385704542.jpg', 9, 0, NULL);
 
 -- ----------------------------
 -- Table structure for sms_coupon
